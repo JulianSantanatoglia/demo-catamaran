@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-ocean-50: #f0f9ff;
+  --color-ocean-100: #e0f2fe;
+  --color-ocean-200: #bae6fd;
+  --color-ocean-300: #7dd3fc;
+  --color-ocean-400: #38bdf8;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-600: #0284c7;
+  --color-ocean-700: #0369a1;
+  --color-ocean-800: #075985;
+  --color-ocean-900: #0c4a6e;
+  --color-sand-50: #fefce8;
+  --color-sand-100: #fef9c3;
+  --color-sand-200: #fef08a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+::selection {
+  @apply bg-ocean-200 text-ocean-900;
+}
+
+/* ── Link interactions ── */
+.link-tap {
+  @apply transition-all duration-200 ease-out;
+}
+.link-tap:hover {
+  @apply -translate-y-px;
+}
+.link-tap:active {
+  @apply scale-[0.97] translate-y-0;
+}
+
+.link-underline {
+  @apply relative;
+}
+.link-underline::after {
+  content: "";
+  @apply absolute -bottom-0.5 left-1/2 h-0.5 w-0 bg-current transition-all duration-300 ease-out -translate-x-1/2 rounded-full;
+}
+.link-underline:hover::after {
+  @apply w-full;
+}
+
+/* ── Page / step entrances ── */
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  70% {
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.7), 0 0 0 8px rgba(37, 211, 102, 0.12); }
+}
+
+.animate-enter {
+  animation: fade-slide-up 0.45s ease-out both;
+}
+
+.animate-enter-scale {
+  animation: fade-scale-in 0.4s ease-out both;
+}
+
+.animate-pop {
+  animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.whatsapp-fab {
+  animation: whatsapp-pulse 2.5s ease-in-out infinite;
+}
+
+/* ── FAQ accordion ── */
+.faq-content {
+  display: grid;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+.faq-content[data-open="false"] {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.faq-content[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.faq-content > div {
+  overflow: hidden;
+}
+
+/* ── Booking decorative bg ── */
+.booking-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(14, 165, 233, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(254, 240, 138, 0.15), transparent),
+    linear-gradient(to bottom, #f8fafc, #ffffff);
+}
