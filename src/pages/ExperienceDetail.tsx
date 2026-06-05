@@ -6,6 +6,7 @@ import { formatPrice } from '../utils/format'
 import { useBooking } from '../context/BookingContext'
 import { useLanguage } from '../context/LanguageContext'
 import { useLocalizedExperience } from '../hooks/useLocalizedExperience'
+import { Reveal } from '../components/ui/Reveal'
 
 export function ExperienceDetail() {
   const { slug } = useParams()
@@ -50,20 +51,25 @@ function ExperienceDetailContent({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <AnimatedLink to="/experiencias" underline className="inline-flex items-center gap-1.5 text-sm font-medium text-ocean-600 hover:text-ocean-800">
-        <ArrowLeft className="h-4 w-4" />
-        {t.experiences.back}
-      </AnimatedLink>
+      <Reveal>
+        <AnimatedLink to="/experiencias" underline className="inline-flex items-center gap-1.5 text-sm font-medium text-ocean-600 hover:text-ocean-800">
+          <ArrowLeft className="h-4 w-4" />
+          {t.experiences.back}
+        </AnimatedLink>
+      </Reveal>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-slate-100">
-          <img
-            src={experience.image}
-            alt={experience.title}
-            className="h-full w-full object-cover aspect-[4/3]"
-          />
-        </div>
+        <Reveal variant="left" delay={100}>
+          <div className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-slate-100">
+            <img
+              src={experience.image}
+              alt={experience.title}
+              className="h-full w-full object-cover aspect-[4/3]"
+            />
+          </div>
+        </Reveal>
 
+        <Reveal variant="right" delay={150}>
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900">{experience.title}</h1>
           <p className="mt-5 text-slate-500 leading-relaxed">{experience.description}</p>
@@ -102,31 +108,36 @@ function ExperienceDetailContent({
             </button>
           </div>
         </div>
+        </Reveal>
       </div>
 
       <div className="mt-14 grid gap-8 sm:grid-cols-2">
-        <div className="rounded-2xl border border-slate-100 p-6">
-          <h2 className="text-xl font-bold text-slate-900">{t.experiences.highlights}</h2>
-          <ul className="mt-4 space-y-3">
-            {experience.highlights.map((h) => (
-              <li key={h} className="flex items-center gap-2.5 text-slate-600">
-                <Check className="h-4 w-4 text-green-500 shrink-0" />
-                {h}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="rounded-2xl border border-slate-100 p-6">
-          <h2 className="text-xl font-bold text-slate-900">{t.experiences.includes}</h2>
-          <ul className="mt-4 space-y-3">
-            {experience.includes.map((item) => (
-              <li key={item} className="flex items-center gap-2.5 text-slate-600">
-                <Check className="h-4 w-4 text-ocean-600 shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Reveal variant="up" delay={100}>
+          <div className="rounded-2xl border border-slate-100 p-6">
+            <h2 className="text-xl font-bold text-slate-900">{t.experiences.highlights}</h2>
+            <ul className="mt-4 space-y-3">
+              {experience.highlights.map((h) => (
+                <li key={h} className="flex items-center gap-2.5 text-slate-600">
+                  <Check className="h-4 w-4 text-green-500 shrink-0" />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+        <Reveal variant="up" delay={200}>
+          <div className="rounded-2xl border border-slate-100 p-6">
+            <h2 className="text-xl font-bold text-slate-900">{t.experiences.includes}</h2>
+            <ul className="mt-4 space-y-3">
+              {experience.includes.map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-slate-600">
+                  <Check className="h-4 w-4 text-ocean-600 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </div>
   )

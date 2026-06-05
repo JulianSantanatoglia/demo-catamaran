@@ -31,6 +31,55 @@ export const translations = {
       embarkDesc:
         'Nos encontrarás en el Puerto Deportivo de Aguadulce, a pocos minutos de Almería capital. Fácil acceso en coche y aparcamiento disponible.',
       howToGet: 'Cómo llegar',
+      gallery: {
+        title: 'Galería',
+        subtitle: 'Momentos vividos a bordo y paisajes de la costa de Almería',
+        prev: 'Anterior',
+        next: 'Siguiente',
+        items: {
+          catamaran1: {
+            alt: 'Catamarán en la costa de Almería',
+            caption: 'Nuestro catamarán · Experiencias náuticas por Almería',
+          },
+          catamaran2: {
+            alt: 'Vista del catamarán desde el mar',
+            caption: 'A bordo · Comodidad y vistas panorámicas',
+          },
+          catamaran3: {
+            alt: 'Catamarán navegando por aguas cristalinas',
+            caption: 'En ruta · Descubre la costa almeriense',
+          },
+        },
+      },
+      testimonials: {
+        badge: 'Reseñas en Google',
+        title: 'Lo que dicen nuestros clientes',
+        subtitle: 'Experiencias reales de quienes ya navegaron con nosotros',
+        rating: '4.9',
+        totalReviews: '500+',
+        reviewsLabel: 'reseñas en Google',
+        verified: 'Publicado en Google',
+        items: [
+          {
+            name: 'María García',
+            date: 'Hace 2 semanas',
+            rating: 5,
+            text: 'Experiencia increíble. El catamarán es muy cómodo, el patrón muy profesional y las calas espectaculares. Repetiremos sin duda.',
+          },
+          {
+            name: 'James Wilson',
+            date: 'Hace 1 mes',
+            rating: 5,
+            text: 'Best boat trip in Almería! Crystal clear water, great music on board and the crew made us feel welcome from the start.',
+          },
+          {
+            name: 'Laura Martínez',
+            date: 'Hace 3 semanas',
+            rating: 5,
+            text: 'Celebramos un cumpleaños a bordo y fue perfecto. Reserva online muy fácil y todo salió como prometían. Muy recomendable.',
+          },
+        ],
+      },
       ctaTitle: '¿Listo para zarpar?',
       ctaDesc:
         'Reserva tu experiencia en menos de 3 minutos. Plazas limitadas, especialmente en temporada alta.',
@@ -272,6 +321,55 @@ export const translations = {
       embarkDesc:
         'Find us at Aguadulce Marina, just minutes from Almería city. Easy car access and parking available.',
       howToGet: 'How to get there',
+      gallery: {
+        title: 'Gallery',
+        subtitle: 'Moments on board and landscapes of the Almería coast',
+        prev: 'Previous',
+        next: 'Next',
+        items: {
+          catamaran1: {
+            alt: 'Catamaran on the Almería coast',
+            caption: 'Our catamaran · Nautical experiences in Almería',
+          },
+          catamaran2: {
+            alt: 'View of the catamaran from the sea',
+            caption: 'On board · Comfort and panoramic views',
+          },
+          catamaran3: {
+            alt: 'Catamaran sailing through crystal-clear waters',
+            caption: 'Underway · Discover the Almería coastline',
+          },
+        },
+      },
+      testimonials: {
+        badge: 'Google reviews',
+        title: 'What our guests say',
+        subtitle: 'Real experiences from those who have already sailed with us',
+        rating: '4.9',
+        totalReviews: '500+',
+        reviewsLabel: 'Google reviews',
+        verified: 'Posted on Google',
+        items: [
+          {
+            name: 'María García',
+            date: '2 weeks ago',
+            rating: 5,
+            text: 'Incredible experience. The catamaran is very comfortable, the skipper highly professional and the coves spectacular. We will definitely come back.',
+          },
+          {
+            name: 'James Wilson',
+            date: '1 month ago',
+            rating: 5,
+            text: 'Best boat trip in Almería! Crystal clear water, great music on board and the crew made us feel welcome from the start.',
+          },
+          {
+            name: 'Laura Martínez',
+            date: '3 weeks ago',
+            rating: 5,
+            text: 'We celebrated a birthday on board and it was perfect. Online booking was very easy and everything went as promised. Highly recommended.',
+          },
+        ],
+      },
       ctaTitle: 'Ready to set sail?',
       ctaDesc:
         'Book your experience in under 3 minutes. Limited spots, especially in high season.',
